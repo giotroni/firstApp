@@ -22,6 +22,4 @@ var app = {
     }
 };
 
-$(document).ready(function() {
-    app.initialize();
-}
+app.initialize();
