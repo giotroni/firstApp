@@ -10,9 +10,14 @@ showAlert: function (message, title) {
 // codice principale
 var app = {
 
-    initialize: function() {
-    var self = this;
-        self.showAlert('App partita', 'Nota:');
+    initialize: function() {    
+        document.addEventListener('deviceready', function(){
+            $("#btnEntra").on("click", app.entra);
+            $("#lblDesc").html("<h1>Ecco!</h1>")
+        }, false);
+    },
+    entra: function(){
+        showAlert('App partita', 'Nota:');
     }
 };
 
