@@ -22,8 +22,9 @@ var app = {
         app.showAlert("Altra pagina","msg");
     },
     capturePhoto: function(){
-        app.showAlert("Fotografa...","msg");
+        app.showAlert("Fotografa","msg");
         navigator.camera.getPicture(app.onCameraSuccess, app.onCameraError);
+        app.showAlert("Sta fotografando...","msg");
     },
     onCameraSuccess: function(data){
         // this is where you would send the image file to server
