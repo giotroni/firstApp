@@ -18,10 +18,10 @@
     <gap:platform name="android" />
     
     <icon src="img/icon.jpg" />
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    <feature name="http://api.phonegap.com/1 pipihonega pipihonega/1.0/camera">
     </feature>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+    <gap:plugin name="org.apache.camera.CameraLauncher"/>
     <gap:plugin name="org.apache.cordova.dialogs" />
     <feature name="http://api.phonegap.com/1.0/device" />
 
