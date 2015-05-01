@@ -23,12 +23,17 @@ var app = {
     },
     capturePhoto: function(){
         app.showAlert("Fotografa...","msg");
+        navigator.camera.getPicture(app.onCameraSuccess, app.onCameraError);
     },
-    uploadPhoto: function(data){
+    onCameraSuccess: function(data){
         // this is where you would send the image file to server
         app.showAlert("Fatta!","msg");
         //output image to screen
         cameraPic.src = "data:image/jpeg;base64," + data;
+    },
+    onCameraError: function(data){
+        // this is where you would send the image file to server
+        app.showAlert("Errore...","msg");
     }
 
 };
