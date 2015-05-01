@@ -22,5 +22,6 @@ var app = {
     }
 };
 
-
-app.initialize();
+$(document).ready(function() {
+    app.initialize();
+}
