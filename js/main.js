@@ -8,7 +8,7 @@ var app = {
         }
     },
     initialize: function() {
-        showAlert("Ecco","qua");
+        app.showAlert("Ecco","qua");
     }
 };
 
