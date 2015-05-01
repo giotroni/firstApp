@@ -12,10 +12,15 @@ var app = {
         this.bindEvents();
     },
     bindEvents: function(){
-        document.addEventListener("deviceready", app.onDeviceReady, false)
+        document.addEventListener("deviceready", app.onDeviceReady, false);
+        $("#btnEntra").on("click", app.nextPage);
+
     },
     onDeviceReady: function(){
         app.showAlert("Chiamata alla fine del caricamento","msg");
+    },
+    nextPage: function(){
+        app.showAlert("Altra pagina","msg");
     }
 };
 
