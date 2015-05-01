@@ -25,6 +25,7 @@ var app = {
     },
     capturePhoto: function(){
         app.showAlert("Fotografa","msg");
+        $("#btnFoto").hide();
         navigator.camera.getPicture(
             function(imgData){
                 app.showAlert("Ok!","msg");
@@ -33,7 +34,6 @@ var app = {
                 app.showAlert("failed : " + error.code,"msg");
             }
         );
-        $("#btnFoto").hide();
     }
 };
 
