@@ -22,6 +22,7 @@
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
     <feature name="http://api.phonegap.com/1.0/notification"/>
+    <gap:plugin name="org.apache.ccordova.dialogs" />
     <feature name="http://api.phonegap.com/1.0/device" />
 
 </widget>
