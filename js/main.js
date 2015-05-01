@@ -7,17 +7,15 @@ var app = {
     },
     bind: function(){
         document.addEventListener('deviceready', this.deviceready, false);
-        $("#btnEntra").on("click", app.entra);
-        $("#lblDesc").html("<h1>Ecco!</h1>")
+
     },
     deviceready: function() {
-    },
-    entra: function(){
-        alert("Partita");
+        alert("Altra ... Partita");
     }
 };
 // inizializza phonegap
 
 $(document).ready(function() {
     app.initialize();
+    alert("Partita");
 }
