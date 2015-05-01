@@ -1,11 +1,3 @@
-// MEssaggi device dependent
-showAlert: function (message, title) {
-    if (navigator.notification) {
-        navigator.notification.alert(message, null, title, 'OK');
-    } else {
-        alert(title ? (title + ": " + message) : message);
-    }
-}
 
 // codice principale
 var app = {
@@ -14,7 +6,7 @@ var app = {
         this.bind();
     },
     bind: function(){
-        document.addEventListener('deviceready', deviceready, false);
+        document.addEventListener('deviceready', this.deviceready, false);
         $("#btnEntra").on("click", app.entra);
         $("#lblDesc").html("<h1>Ecco!</h1>")
     },
@@ -24,7 +16,6 @@ var app = {
         alert("Partita");
     }
 };
-
 // inizializza phonegap
 
 $(document).ready(function() {
