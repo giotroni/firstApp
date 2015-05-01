@@ -9,6 +9,13 @@ var app = {
     },
     initialize: function() {
         app.showAlert("Ecco","qua");
+        this.bindEvents();
+    },
+    bindEvents: function(){
+        document.addEventListener("deviceready", app.onDeviceReady, false)
+    },
+    onDeviceReady: function(){
+        app.showAlert("anche qua","qua");
     }
 };
 
