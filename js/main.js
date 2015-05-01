@@ -8,10 +8,10 @@ var app = {
         }
     },
     initialize: function() {
-        app.showAlert("Ecco","qua");
     }
 };
 
 $(document).ready(function() {
     app.initialize();
+    app.showAlert("Ecco","qua");
 }
