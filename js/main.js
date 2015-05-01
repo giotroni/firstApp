@@ -8,14 +8,14 @@ var app = {
         }
     },
     initialize: function() {
-        app.showAlert("Ecco","qua");
+        app.showAlert("Chiamata al lancio","msg");
         this.bindEvents();
     },
     bindEvents: function(){
         document.addEventListener("deviceready", app.onDeviceReady, false)
     },
     onDeviceReady: function(){
-        app.showAlert("anche qua","qua");
+        app.showAlert("Chiamata alla fine del caricamento","msg");
     }
 };
 
