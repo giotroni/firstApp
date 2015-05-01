@@ -22,7 +22,6 @@ var app = {
         app.showAlert("Altra pagina","msg");
     },
     capturePhoto: function(){
-        navigator.camera.getPicture(app.uploadPhoto,null,{sourceType:1,quality:60});
         app.showAlert("Fotografa...","msg");
     },
     uploadPhoto: function(data){
