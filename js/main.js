@@ -10,11 +10,15 @@ showAlert: function (message, title) {
 // codice principale
 var app = {
 
-    initialize: function() {    
-        document.addEventListener('deviceready', function(){
-            $("#btnEntra").on("click", app.entra);
-            $("#lblDesc").html("<h1>Ecco!</h1>")
-        }, false);
+    initialize: function() {
+        this.bind();
+    },
+    bind: function(){
+        document.addEventListener('deviceready', deviceready, false);
+//        $("#btnEntra").on("click", app.entra);
+        $("#lblDesc").html("<h1>Ecco!</h1>")
+    },
+    deviceready: function() {
     },
     entra: function(){
         showAlert('App partita', 'Nota:');
