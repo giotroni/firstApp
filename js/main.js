@@ -20,11 +20,11 @@ var app = {
     },
     nextPage: function(){
         app.showAlert("Altra pagina","msg");
+        $("#btnFoto").show();
+
     },
     capturePhoto: function(){
         app.showAlert("Fotografa","msg");
-        navigator.camera.cleanup(); 
-        app.showAlert("Sta fotografando...","msg");
         navigator.camera.getPicture(
             function(imgData){
                 app.showAlert("Ok!","msg");
@@ -33,15 +33,8 @@ var app = {
                 app.showAlert("failed : " + error.code,"msg");
             }
         );
-        app.showAlert("Fatta!","msg");
-    },
-    onCameraSuccess: function(data){
-        // this is where you would send the image file to server
-        app.showAlert("Fatta!","msg");
-        //output image to screen
-        //cameraPic.src = "data:image/jpeg;base64," + data;
+        $("#btnFoto").hide();
     }
-
 };
 
 
