@@ -20,7 +20,7 @@
     <icon src="img/icon.jpg" />
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
-    <gap:plugin name="camera" value="org.apache.cordova.CameraLauncher"/>
+    <gap:plugin name="Camera" value="org.apache.cordova.CameraLauncher"/>
     <gap:plugin name="org.apache.cordova.dialogs" />
     <feature name="http://api.phonegap.com/1.0/device" />
 
