@@ -23,18 +23,23 @@ var app = {
     },
     capturePhoto: function(){
         app.showAlert("Fotografa","msg");
-        navigator.camera.getPicture(app.onCameraSuccess, app.onCameraError);
+        navigator.camera.cleanup(); 
         app.showAlert("Sta fotografando...","msg");
+        navigator.camera.getPicture(
+            function(imgData){
+                app.showAlert("Ok!","msg");
+            },
+            function fail(error){
+                app.showAlert("failed : " + error.code,"msg");
+            }
+        );
+        app.showAlert("Fatta!","msg");
     },
     onCameraSuccess: function(data){
         // this is where you would send the image file to server
         app.showAlert("Fatta!","msg");
         //output image to screen
-        cameraPic.src = "data:image/jpeg;base64," + data;
-    },
-    onCameraError: function(data){
-        // this is where you would send the image file to server
-        app.showAlert("Errore...","msg");
+        //cameraPic.src = "data:image/jpeg;base64," + data;
     }
 
 };
