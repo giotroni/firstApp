@@ -1,21 +1,15 @@
-
-// codice principale
 var app = {
 
+    showAlert: function (message, title) {
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
+        } else {
+            alert(title ? (title + ": " + message) : message);
+        }
+    },
     initialize: function() {
-        this.bind();
-    },
-    bind: function(){
-        document.addEventListener('deviceready', this.deviceready, false);
-
-    },
-    deviceready: function() {
-        alert("Altra ... Partita");
+        showAlert("Ecco","qua");
     }
 };
-// inizializza phonegap
 
-$(document).ready(function() {
-    app.initialize();
-    alert("Partita");
-}
+app.initialize();
