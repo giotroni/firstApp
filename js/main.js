@@ -28,11 +28,16 @@ var app = {
         $("#btnFoto").hide();
         navigator.camera.getPicture(
             function(imgData){
-                $('#imgFoto').src = "data:image/jpeg;base64," + imageData;
+                var smallImage = document.getElementById('imgFoto');
+                smallImage.src = "data:image/jpeg;base64," + imageData;
                 app.showAlert("Ok!","msg");
             },
             function fail(error){
                 app.showAlert("failed : " + error.code,"msg");
+            },
+            {
+                quality: 50,
+                destinationType: destinationType.DATA_URL
             }
         );
     }
