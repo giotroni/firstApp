@@ -29,7 +29,7 @@ var app = {
     capturePhoto: function() {
         app.showAlert("Fotografa","msg");
         $("#btnFoto").hide();
-        navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
+        navigator.camera.getPicture(app.onPhotoFileSuccess, app.onFail, { quality: 50, destinationType: Camera.DestinationType.FILE_URI });
     },
     onPhotoFileSuccess: function(imageData) {
         // Get image handle
