@@ -34,8 +34,7 @@ var app = {
     onPhotoFileSuccess: function(imageData) {
         // Get image handle
         var smallImage = document.getElementById('smallImage');    
-        // Show the captured photo
-        // The inline CSS rules are used to resize the image
+        // Show the captured photo The inline CSS rules are used to resize the image
         smallImage.src = imageData;
     },
     onFail: function(msg){
