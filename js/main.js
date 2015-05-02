@@ -20,7 +20,6 @@ var app = {
         destinationType=navigator.camera.DestinationType;
         $("#btnEntra").on("click", app.nextPage);
         $("#btnFoto").on("click", app.capturePhoto);
-        $("#btnFoto1").on("click", app.capturePhoto1);
     },
     nextPage: function(){
         app.showAlert("Altra pagina","msg");
@@ -33,6 +32,8 @@ var app = {
         $("#btnFoto").hide();
         navigator.camera.getPicture(
             function(imgData){
+         	// Get image handle
+                //
                 var smallImage = document.getElementById('smallImage');
                 // Unhide image elements
                 //
@@ -41,32 +42,7 @@ var app = {
                 // The inline CSS rules are used to resize the image
                 //
                 smallImage.src = imageData;
-
-                app.showAlert("Ok!","msg");
-            },
-            function fail(error){
-                app.showAlert("failed : " + error.code,"msg");
-            },
-            {
-                quality: 50 }
-        );
-    },
-    capturePhoto1: function(){
-        app.showAlert("Fotografa","msg");
-        $("#btnFoto").hide();
-        navigator.camera.getPicture(
-            function(imgData){
-                // Get image handle
-                //
-                var largeImage = document.getElementById('largeImage');
-                // Unhide image elements
-                //
-                largeImage.style.display = 'block';
-                // Show the captured photo
-                // The inline CSS rules are used to resize the image
-                //
-                largeImage.src = imageURI;
-                          
+                
                 app.showAlert("Ok!","msg");
             },
             function fail(error){
