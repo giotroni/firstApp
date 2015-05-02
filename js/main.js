@@ -1,5 +1,7 @@
-var app = {
+var destinationType; // sets the format of returned value
 
+var app = {
+    
     showAlert: function (message, title) {
         if (navigator.notification) {
             navigator.notification.alert(message, null, title, 'OK');
@@ -15,6 +17,7 @@ var app = {
     },
     onDeviceReady: function(){
         app.showAlert("Chiamata alla fine del caricamento","msg");
+        destinationType=navigator.camera.DestinationType;
         $("#btnEntra").on("click", app.nextPage);
         $("#btnFoto").on("click", app.capturePhoto);
     },
