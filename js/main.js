@@ -24,7 +24,8 @@ var app = {
     nextPage: function(){
         app.showAlert("Altra pagina","msg");
         $("#btnFoto").show();
-
+        var smallImage = document.getElementById('imgFoto');
+        smallImage.src = "img/rugby.jpg";
     },
     capturePhoto: function(){
         app.showAlert("Fotografa","msg");
