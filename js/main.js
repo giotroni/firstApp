@@ -29,6 +29,7 @@ var app = {
         navigator.camera.getPicture(
             function(imgData){
                 app.showAlert("Ok!","msg");
+                $('#imgFoto').src = "data:image/jpeg;base64," + imageData;
             },
             function fail(error){
                 app.showAlert("failed : " + error.code,"msg");
