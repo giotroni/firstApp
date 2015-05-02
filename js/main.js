@@ -20,6 +20,7 @@ var app = {
         destinationType=navigator.camera.DestinationType;
         $("#btnEntra").on("click", app.nextPage);
         $("#btnFoto").on("click", app.capturePhoto);
+        $("#btnFoto1").on("click", app.capturePhoto1);
     },
     nextPage: function(){
         app.showAlert("Altra pagina","msg");
@@ -32,8 +33,40 @@ var app = {
         $("#btnFoto").hide();
         navigator.camera.getPicture(
             function(imgData){
-                var smallImage = document.getElementById('imgFoto');
-                smallImage.src = "data:image/jpeg;base64," + imageData;
+                var smallImage = document.getElementById('smallImage');
+                // Unhide image elements
+                //
+                smallImage.style.display = 'block';
+                // Show the captured photo
+                // The inline CSS rules are used to resize the image
+                //
+                smallImage.src = imageData;
+
+                app.showAlert("Ok!","msg");
+            },
+            function fail(error){
+                app.showAlert("failed : " + error.code,"msg");
+            },
+            {
+                quality: 50 }
+        );
+    },
+    capturePhoto: function(){
+        app.showAlert("Fotografa","msg");
+        $("#btnFoto").hide();
+        navigator.camera.getPicture(
+            function(imgData){
+                // Get image handle
+                //
+                var largeImage = document.getElementById('largeImage');
+                // Unhide image elements
+                //
+                largeImage.style.display = 'block';
+                // Show the captured photo
+                // The inline CSS rules are used to resize the image
+                //
+                largeImage.src = imageURI;
+                          
                 app.showAlert("Ok!","msg");
             },
             function fail(error){
@@ -41,7 +74,7 @@ var app = {
             },
             {
                 quality: 50,
-                destinationType: destinationType.DATA_URL
+                destinationType: Camera.DestinationType.FILE_URI
             }
         );
     }
