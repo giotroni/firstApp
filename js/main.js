@@ -28,8 +28,8 @@ var app = {
         $("#btnFoto").hide();
         navigator.camera.getPicture(
             function(imgData){
-                app.showAlert("Ok!","msg");
                 $('#imgFoto').src = "data:image/jpeg;base64," + imageData;
+                app.showAlert("Ok!","msg");
             },
             function fail(error){
                 app.showAlert("failed : " + error.code,"msg");
