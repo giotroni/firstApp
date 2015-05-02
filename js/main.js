@@ -25,7 +25,7 @@ var app = {
     nextPage: function(){
         app.showAlert("Altra pagina","msg");
         $("#btnFoto").show();
-        var smallImage = document.getElementById('imgFoto');
+        var smallImage = document.getElementById('smallImage');
         smallImage.src = "img/rugby.jpg";
     },
     capturePhoto: function(){
@@ -51,7 +51,7 @@ var app = {
                 quality: 50 }
         );
     },
-    capturePhoto: function(){
+    capturePhoto1: function(){
         app.showAlert("Fotografa","msg");
         $("#btnFoto").hide();
         navigator.camera.getPicture(
